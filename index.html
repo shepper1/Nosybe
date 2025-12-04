@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosy Be : L'Île aux Parfums et aux Lémuriens </title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        template: {
+                            sable: '#F3E5AB',
+                            ocre: '#C66B3D',
+                            roche: '#2D2A26',
+                            ciel: '#4A6C6F',
+                            bg: '#FAFAF9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { overflow-x: hidden; }
+        
+        /* Ligne verticale de la timeline */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line { left: 50%; margin-left: -1px; }
+        }
+
+        /* Style des cartes Info */
+        .tip-card {
+            border-left: 4px solid #C66B3D;
+            background-color: #FFF7ED;
+        }
+
+        /* Masquer la scrollbar de la nav mobile tout en gardant le scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-template-bg text-template-roche antialiased">
+
+    <nav id="nav-desktop" class="hidden md:flex fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-200 py-4 px-8 justify-between items-center shadow-sm transition-transform duration-300 -translate-y-full">
+        <a href="#top" class="text-xl font-serif font-bold tracking-widest text-template-roche">Nosy Be : L'Île aux Parfums et aux Lémuriens</a>
+        <div class="space-x-6 text-sm font-bold text-gray-600">
+            <a href="#jour-1" class="nav-item-desktop hover:text-template-ocre transition">Le Parcours</a>
+            <a href="#pratique" class="nav-item-desktop hover:text-template-ocre transition">Infos Pratiques</a>
+        </div>
+    </nav>
+
+    <nav id="nav-mobile" class="md:hidden fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-200 py-3 pl-4 overflow-x-auto hide-scroll whitespace-nowrap shadow-md transition-transform duration-300 -translate-y-full">
+        <div class="flex space-x-2 pr-4" id="mobile-menu-container">
+            <a href="#top" class="inline-block px-3 py-1 bg-template-roche text-white rounded-full text-xs font-bold shadow-sm">Top</a>
+            
+                <a href="#jour-1" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J1 Arrivée sur l'Île aux Parfums</a>
+            
+                <a href="#jour-2" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J2 Trésors Marins : Nosy Komba & Tanikely</a>
+            
+                <a href="#jour-3" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J3 Le Nord Sauvage et la Plage d'Andilana</a>
+            
+                <a href="#jour-4" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J4 Nosy Iranja, l'Île aux Tortues</a>
+            
+                <a href="#jour-5" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J5 Cœur Battant de Hell-Ville</a>
+            
+                <a href="#jour-6" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J6 Aventure dans la Forêt de Lokobe</a>
+            
+                <a href="#jour-7" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J7 Panorama à 360° au Mont Passot</a>
+            
+                <a href="#jour-8" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J8 Nosy Sakatia, le Jardin d'Éden</a>
+            
+                <a href="#jour-9" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J9 Derniers Instants Malgaches</a>
+            
+                <a href="#jour-10" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J10 Veloma, Nosy Be !</a>
+            
+            <a href="#pratique" class="mobile-link inline-block px-3 py-1 border border-gray-300 text-gray-500 rounded-full text-xs font-bold">Infos</a>
+        </div>
+    </nav>
+
+    <header id="top" class="relative h-[85vh] flex items-center justify-center overflow-hidden pt-12 md:pt-0">
+        
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+        <video autoplay muted loop playsinline 
+               poster="https://images.unsplash.com/photo-1579606946838-6db34433f3c0?q=80&w=2070"
+               class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://videos.pexels.com/video-files/4456988/4456988-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+        
+        <div class="relative z-20 text-center text-white px-4 max-w-3xl animate-fade-in-up">
+            <p class="font-sans text-template-sable tracking-[0.3em] mb-4 uppercase text-sm font-semibold">Feuille de Route</p>
+            <h1 class="font-Playfair italic text-5xl md:text-8xl mb-6 leading-tight drop-shadow-lg">Nosy Be</h1>
+            <p class="font-sans text-lg md:text-xl text-gray-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed">Nosy Be : L'Île aux Parfums et aux Lémuriens</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold mb-10">
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🗓️ 10 jours</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">💰 2800€ / pers</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🛬 Environ 13h avec escale depuis Paris</span>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="itineraire" class="max-w-6xl mx-auto px-4 py-20 relative">
+        
+        <div class="text-center mb-16">
+            <span class="text-template-ocre font-bold tracking-widest text-xs uppercase">Le Roadtrip</span>
+            <h2 class="font-serif text-4xl mt-2 text-template-roche">Votre Programme</h2>
+        </div>
+
+        <div class="relative">
+            <div class="timeline-line"></div>
+            
+            
+                <div id="jour-1" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 1</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Arrivée sur l'Île aux Parfums</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après un long voyage, l'arrivée à Nosy Be est une immersion douce dans l'ambiance malgache. L'air est chargé des parfums d'ylang-ylang et d'épices. Installez-vous tranquillement et laissez le rythme 'mora mora' (doucement, doucement) vous envahir. Une première balade sur la plage d'Ambatoloaka au coucher du soleil est le prélude parfait à l'aventure qui vous attend.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛬 <strong>Arrivée à l'aéroport de Fascene</strong>: Accueil et transfert vers votre hébergement, première imprégnation de l'atmosphère locale.</li>
+                            
+                                <li>🌅 <strong>Coucher de soleil à Ambatoloaka</strong>: Flânez sur la plage la plus animée de l'île et sirotez un premier cocktail de fruits frais face à l'océan Indien.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Nosybe/main/jour1.jpg" class="w-full h-64 object-cover" alt="Jour 1">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💰 Change</p>
+                                <p class="text-gray-700">Pensez à changer des Euros en Ariary (MGA) dès l'aéroport pour vos premières dépenses comme le taxi ou les boissons.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-2" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 2</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Trésors Marins : Nosy Komba & Tanikely</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Embarquez pour une journée inoubliable à la découverte de deux joyaux de l'archipel. Nosy Komba vous accueille avec ses lémuriens makis, curieux et peu farouches. Plongez ensuite dans l'aquarium naturel de Nosy Tanikely, un parc national marin où des myriades de poissons colorés et des tortues marines évoluent dans des eaux cristallines. C'est une véritable carte postale.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🐒 <strong>Rencontre avec les lémuriens de Nosy Komba</strong>: Approchez les lémuriens makis dans leur habitat naturel et découvrez l'artisanat local dans le village de pêcheurs.</li>
+                            
+                                <li>🐠 <strong>Snorkeling à Nosy Tanikely</strong>: Explorez avec masque et tuba des fonds marins exceptionnels, classés parc national pour leur biodiversité unique.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Nosybe/main/jour2.jpg" class="w-full h-64 object-cover" alt="Jour 2">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🧴 Éco-geste</p>
+                                <p class="text-gray-700">N'oubliez pas votre crème solaire biodégradable pour préserver les coraux fragiles de la réserve de Tanikely.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍌 Astuce</p>
+                                <p class="text-gray-700">Achetez quelques bananes pour les lémuriens de Nosy Komba, ils viendront manger dans votre main pour une photo mémorable.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-3" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 3</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Le Nord Sauvage et la Plage d'Andilana</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui, partez à la conquête du nord de l'île principale. Entre la visite d'une distillerie d'ylang-ylang qui a donné son surnom à l'île et la découverte de la faune endémique, la journée est riche en sensations. Elle se termine en apothéose sur la plage d'Andilana, considérée comme la plus belle de Nosy Be, avec son sable blanc immaculé et ses eaux turquoise.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🦎 <strong>Visite du parc Lemuria Land</strong>: Découvrez une plantation d'ylang-ylang en activité et observez de près caméléons, tortues et différentes espèces de lémuriens.</li>
+                            
+                                <li>🏖️ <strong>Détente sur la plage d'Andilana</strong>: Profitez d'un après-midi de farniente sur cette plage paradisiaque, idéale pour la baignade et la relaxation.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Nosybe/main/jour3.jpg" class="w-full h-64 object-cover" alt="Jour 3">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍽️ Gourmandise</p>
+                                <p class="text-gray-700">Le restaurant 'Chez Loulou' sur la plage d'Andilana est réputé pour ses fruits de mer frais, les pieds dans le sable.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-4" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 4</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Nosy Iranja, l'Île aux Tortues</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Préparez-vous à une excursion qui restera gravée dans votre mémoire. Après une traversée en bateau, vous découvrirez Nosy Iranja, deux îles reliées par un banc de sable blanc d'un kilomètre de long, accessible uniquement à marée basse. Le paysage est spectaculaire, les eaux sont d'une clarté incroyable et c'est un site de ponte important pour les tortues marines.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏝️ <strong>Traversée du banc de sable</strong>: Marchez entre les deux îles sur cette langue de sable immaculé, une expérience unique au milieu de l'océan.</li>
+                            
+                                <li>🐢 <strong>Observation de la faune marine</strong>: Gardez les yeux ouverts pour apercevoir les tortues marines qui viennent nager près des côtes, et parfois même les dauphins durant la traversée.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Nosybe/main/jour4.jpg" class="w-full h-64 object-cover" alt="Jour 4">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌊 Important</p>
+                                <p class="text-gray-700">Vérifiez les horaires des marées avant de partir pour profiter pleinement du banc de sable. Le trajet en bateau dure environ 1h30.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">☀️ Protection</p>
+                                <p class="text-gray-700">Le soleil tape très fort sur le banc de sable. Chapeau, lunettes et crème solaire sont indispensables.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-5" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 5</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Cœur Battant de Hell-Ville</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Plongez au cœur de la vie locale en explorant Hell-Ville, la capitale de Nosy Be. Loin des plages, découvrez une ville animée avec ses bâtiments coloniaux, son marché couvert bouillonnant de vie, de couleurs et d'odeurs. C'est l'occasion parfaite pour sentir le pouls de l'île, goûter aux produits locaux et faire quelques emplettes artisanales.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛍️ <strong>Exploration du marché couvert</strong>: Imprégnez-vous de l'ambiance locale en déambulant entre les étals d'épices, de fruits exotiques, de poissons et d'artisanat.</li>
+                            
+                                <li>🏛️ <strong>Balade dans le centre historique</strong>: Admirez les vestiges de l'architecture coloniale et découvrez l'histoire de la ville en flânant dans ses rues principales.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Nosybe/main/jour5.jpg" class="w-full h-64 object-cover" alt="Jour 5">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🤝 Culture locale</p>
+                                <p class="text-gray-700">N'hésitez pas à négocier les prix avec le sourire au marché, cela fait partie de la culture locale.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-6" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 6</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Aventure dans la Forêt de Lokobe</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Partez pour une immersion totale dans la nature en visitant la Réserve Naturelle Intégrale de Lokobe. Accessible uniquement en pirogue traditionnelle, cette forêt primaire est le dernier refuge de la faune et la flore originelles de Nosy Be. Accompagné d'un guide local, vous partirez sur les traces des lémuriens nocturnes, des caméléons et des serpents endémiques.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛶 <strong>Approche en pirogue traditionnelle</strong>: Glissez silencieusement sur l'eau à travers la mangrove pour atteindre l'entrée de la réserve, une expérience authentique.</li>
+                            
+                                <li>🐒 <strong>Randonnée guidée dans la jungle</strong>: Suivez votre guide sur les sentiers pour débusquer le lémurien macaco, le caméléon panthère et d'autres espèces fascinantes.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Nosybe/main/jour6.jpg" class="w-full h-64 object-cover" alt="Jour 6">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">👟 Équipement</p>
+                                <p class="text-gray-700">Prévoyez de bonnes chaussures de marche, de l'anti-moustique et de l'eau. Un guide est obligatoire et essentiel pour repérer les animaux.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-7" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 7</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Panorama à 360° au Mont Passot</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après plusieurs jours d'excursions, accordez-vous une journée plus calme. Profitez de la matinée pour vous détendre sur une plage paisible ou explorer les environs à votre rythme. En fin de journée, rejoignez le Mont Passot, le point culminant de Nosy Be. Le spectacle du soleil se couchant sur les lacs sacrés et l'ensemble de l'île est tout simplement magique.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🧘 <strong>Matinée libre et détente</strong>: Choisissez une plage comme Madirokely ou Amporaha pour vous relaxer, lire un livre ou simplement profiter du cadre.</li>
+                            
+                                <li>🌇 <strong>Coucher de soleil au Mont Passot</strong>: Admirez une vue panoramique époustouflante sur l'île et le canal du Mozambique alors que le ciel s'embrase.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Nosybe/main/jour7.jpg" class="w-full h-64 object-cover" alt="Jour 7">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⏰ Timing parfait</p>
+                                <p class="text-gray-700">Arrivez au Mont Passot au moins une heure avant le coucher du soleil pour choisir le meilleur point de vue et profiter des changements de lumière.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-8" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 8</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Nosy Sakatia, le Jardin d'Éden</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">À quelques minutes de bateau de Nosy Be se cache Nosy Sakatia, l'île aux orchidées. Plus sauvage et préservée, elle offre un cadre idyllique pour une journée entre terre et mer. Randonnez à travers ses sentiers pour découvrir une végétation luxuriante avant de vivre un moment magique : nager avec les tortues vertes géantes qui viennent brouter les herbiers marins à quelques mètres du rivage.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🌿 <strong>Randonnée sur l'île aux orchidées</strong>: Parcourez les sentiers de l'île pour découvrir sa flore exceptionnelle, des plantations de café aux orchidées sauvages.</li>
+                            
+                                <li>🐢 <strong>Nage avec les tortues vertes</strong>: Vivez une expérience inoubliable en nageant aux côtés d'impressionnantes tortues marines dans leur milieu naturel.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Nosybe/main/jour8.jpg" class="w-full h-64 object-cover" alt="Jour 8">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">ℹ️ À savoir</p>
+                                <p class="text-gray-700">Les tortues sont présentes toute la journée sur un site précis. Respectez une distance de sécurité et ne les touchez pas pour préserver leur quiétude.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-9" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 9</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Derniers Instants Malgaches</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Profitez de cette dernière journée complète pour vous imprégner une dernière fois de l'atmosphère de Nosy Be. C'est le moment idéal pour acheter vos souvenirs, comme de la vanille, des épices ou de l'artisanat local. Offrez-vous un dernier festin de saveurs malgaches dans un bon restaurant pour clôturer ce voyage en beauté.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🎁 <strong>Shopping de souvenirs</strong>: Dénichez des trésors d'artisanat local, de la vanille ou des nappes brodées dans les boutiques.</li>
+                            
+                                <li>🍽️ <strong>Dîner d'adieu gastronomique</strong>: Savourez un dernier repas malgache, comme un romazava ou des brochettes de zébu, dans un cadre agréable.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Nosybe/main/jour9.jpg" class="w-full h-64 object-cover" alt="Jour 9">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌿 Souvenir</p>
+                                <p class="text-gray-700">La vanille de Madagascar est l'une des meilleures au monde. Achetez-la de préférence sous vide pour une meilleure conservation.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-10" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 10</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Veloma, Nosy Be !</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Toutes les bonnes choses ont une fin. Selon l'horaire de votre vol, profitez d'un dernier petit-déjeuner face à l'océan. Il est temps de faire vos bagages, la tête remplie d'images et de souvenirs inoubliables de l'île aux parfums. Transfert vers l'aéroport de Fascene pour votre vol retour vers Paris.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>✈️ <strong>Transfert vers l'aéroport</strong>: Route vers l'aéroport de Fascene pour l'enregistrement de votre vol retour.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Nosybe/main/jour10.jpg" class="w-full h-64 object-cover" alt="Jour 10">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">👋 Au revoir</p>
+                                <p class="text-gray-700">L'expression malgache pour dire au revoir est 'Veloma'. N'hésitez pas à l'utiliser, cela sera très apprécié.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+    </section>
+
+    <footer id="pratique" class="bg-white border-t border-gray-200 pt-16 pb-10 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>☀️</span> Périodes Idéales
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Les périodes idéales pour ce séjour sont les mois de mai à octobre, durant la saison sèche.</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>🧳</span> À savoir
+                </h4>
+                <ul class="text-sm text-gray-600 space-y-3">
+
+                        <li><strong>🌡️ :</strong> Climat tropical avec des températures moyennes de 25-30°C. Prévoir des vêtements légers et un imperméable pour les averses passagères.</li>
+                    
+                        <li><strong>💳 :</strong> La monnaie est l'Ariary (MGA). Changez des euros à l'arrivée et prévoyez du liquide, les cartes de crédit sont peu acceptées hors des grands hôtels.</li>
+                    
+                        <li><strong>🛺 :</strong> Les tuk-tuks et les taxis sont les moyens de transport principaux. Négociez toujours le prix de la course avant de monter.</li>
+                    
+                        <li><strong>📶 :</strong> Le Wi-Fi est souvent lent. Acheter une carte SIM locale (Telma, Orange) est une bonne option pour rester connecté.</li>
+                    
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2"><span>🔗</span> Liens Utiles</h4>
+                <ul class="text-sm space-y-3">
+                  <li><a href="https://shepper1.github.io/Nosybe/map.html" target="_blank" class="hover:underline flex items-center gap-2"><strong>🗺️ Carte</strong></a></li>
+                    
+                        <li><a href="https://madagascar-tourisme.com/fr/" target="_blank" class="hover:underline flex items-center gap-2"><strong>📘 Office National du Tourisme de Madagascar</strong></a></li>
+                    
+                        <li><a href="https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/madagascar/" target="_blank" class="hover:underline flex items-center gap-2"><strong>🛂 France Diplomatie - Madagascar</strong></a></li>
+                    
+                        <li><a href="https://www.accuweather.com/fr/mg/nosy-be/232390/weather-forecast/232390" target="_blank" class="hover:underline flex items-center gap-2"><strong>🌤️ Météo Nosy Be</strong></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="text-center border-t border-gray-100 pt-8">
+            <p class="font-serif text-2xl text-template-roche mb-2">Nosybe</p>
+            <p class="text-xs text-gray-400">© 2025 - Roadmap</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Gestion de l'affichage du menu au scroll
+        const navDesktop = document.getElementById('nav-desktop');
+        const navMobile = document.getElementById('nav-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                navDesktop.classList.remove('-translate-y-full');
+                navMobile.classList.remove('-translate-y-full');
+            } else {
+                navDesktop.classList.add('-translate-y-full');
+                navMobile.classList.add('-translate-y-full');
+            }
+        });
+
+        // 2. Détection de l'étape active
+        const observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    
+                    document.querySelectorAll('.mobile-link').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (linkHref === activeId) {
+                            link.classList.remove('bg-gray-100', 'text-gray-700');
+                            link.classList.add('bg-template-ocre', 'text-white', 'shadow-md');
+                            link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            link.classList.add('bg-gray-100', 'text-gray-700');
+                            link.classList.remove('bg-template-ocre', 'text-white', 'shadow-md');
+                        }
+                    });
+
+                    document.querySelectorAll('.nav-item-desktop').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (activeId.includes('jour') && linkHref === 'jour-1') {
+                            link.classList.add('text-template-ocre');
+                        } else if (activeId === 'pratique' && linkHref === 'pratique') {
+                            link.classList.add('text-template-ocre');
+                        } else {
+                            link.classList.remove('text-template-ocre');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('div[id^="jour-"], footer#pratique').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
