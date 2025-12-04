@@ -1,0 +1,254 @@
+{
+  "pays": "Madagascar",
+  "drapeau": "🇲🇬",
+  "symbole": "🦎",
+  "titre": "Nosy Be : L'Île aux Parfums et aux Lémuriens",
+  "budget": "2800€",
+  "duree": "10 jours",
+  "temps_vol": "Environ 13h avec escale",
+  "jours": [
+    {
+      "jour": 1,
+      "symbole": "🛬",
+      "titre": "Arrivée sur l'Île aux Parfums",
+      "legende": "Après un long voyage, l'arrivée à Nosy Be est une immersion douce dans l'ambiance malgache. L'air est chargé des parfums d'ylang-ylang et d'épices. Installez-vous tranquillement et laissez le rythme 'mora mora' (doucement, doucement) vous envahir. Une première balade sur la plage d'Ambatoloaka au coucher du soleil est le prélude parfait à l'aventure qui vous attend.",
+      "lieu": "Nosy Be - Ambatoloaka",
+      "activites": [
+        "🛬 <strong>Arrivée à l'aéroport de Fascene</strong>: Accueil et transfert vers votre hébergement, première imprégnation de l'atmosphère locale.",
+        "🌅 <strong>Coucher de soleil à Ambatoloaka</strong>: Flânez sur la plage la plus animée de l'île et sirotez un premier cocktail de fruits frais face à l'océan Indien."
+      ],
+      "illustration": "jour1.jpg",
+      "encarts": [
+        {
+          "symbole": "💰",
+          "titre": "Change",
+          "texte": "Pensez à changer des Euros en Ariary (MGA) dès l'aéroport pour vos premières dépenses comme le taxi ou les boissons."
+        }
+      ]
+    },
+    {
+      "jour": 2,
+      "symbole": "🐠",
+      "titre": "Trésors Marins : Nosy Komba & Tanikely",
+      "legende": "Embarquez pour une journée inoubliable à la découverte de deux joyaux de l'archipel. Nosy Komba vous accueille avec ses lémuriens makis, curieux et peu farouches. Plongez ensuite dans l'aquarium naturel de Nosy Tanikely, un parc national marin où des myriades de poissons colorés et des tortues marines évoluent dans des eaux cristallines. C'est une véritable carte postale.",
+      "lieu": "Nosy Komba & Nosy Tanikely",
+      "activites": [
+        "🐒 <strong>Rencontre avec les lémuriens de Nosy Komba</strong>: Approchez les lémuriens makis dans leur habitat naturel et découvrez l'artisanat local dans le village de pêcheurs.",
+        "🐠 <strong>Snorkeling à Nosy Tanikely</strong>: Explorez avec masque et tuba des fonds marins exceptionnels, classés parc national pour leur biodiversité unique."
+      ],
+      "illustration": "jour2.jpg",
+      "encarts": [
+        {
+          "symbole": "🧴",
+          "titre": "Éco-geste",
+          "texte": "N'oubliez pas votre crème solaire biodégradable pour préserver les coraux fragiles de la réserve de Tanikely."
+        },
+        {
+          "symbole": "🍌",
+          "titre": "Astuce",
+          "texte": "Achetez quelques bananes pour les lémuriens de Nosy Komba, ils viendront manger dans votre main pour une photo mémorable."
+        }
+      ]
+    },
+    {
+      "jour": 3,
+      "symbole": "🌺",
+      "titre": "Le Nord Sauvage et la Plage d'Andilana",
+      "legende": "Aujourd'hui, partez à la conquête du nord de l'île principale. Entre la visite d'une distillerie d'ylang-ylang qui a donné son surnom à l'île et la découverte de la faune endémique, la journée est riche en sensations. Elle se termine en apothéose sur la plage d'Andilana, considérée comme la plus belle de Nosy Be, avec son sable blanc immaculé et ses eaux turquoise.",
+      "lieu": "Nord de Nosy Be",
+      "activites": [
+        "🦎 <strong>Visite du parc Lemuria Land</strong>: Découvrez une plantation d'ylang-ylang en activité et observez de près caméléons, tortues et différentes espèces de lémuriens.",
+        "🏖️ <strong>Détente sur la plage d'Andilana</strong>: Profitez d'un après-midi de farniente sur cette plage paradisiaque, idéale pour la baignade et la relaxation."
+      ],
+      "illustration": "jour3.jpg",
+      "encarts": [
+        {
+          "symbole": "🍽️",
+          "titre": "Gourmandise",
+          "texte": "Le restaurant 'Chez Loulou' sur la plage d'Andilana est réputé pour ses fruits de mer frais, les pieds dans le sable."
+        }
+      ]
+    },
+    {
+      "jour": 4,
+      "symbole": "🐢",
+      "titre": "Nosy Iranja, l'Île aux Tortues",
+      "legende": "Préparez-vous à une excursion qui restera gravée dans votre mémoire. Après une traversée en bateau, vous découvrirez Nosy Iranja, deux îles reliées par un banc de sable blanc d'un kilomètre de long, accessible uniquement à marée basse. Le paysage est spectaculaire, les eaux sont d'une clarté incroyable et c'est un site de ponte important pour les tortues marines.",
+      "lieu": "Nosy Iranja",
+      "activites": [
+        "🏝️ <strong>Traversée du banc de sable</strong>: Marchez entre les deux îles sur cette langue de sable immaculé, une expérience unique au milieu de l'océan.",
+        "🐢 <strong>Observation de la faune marine</strong>: Gardez les yeux ouverts pour apercevoir les tortues marines qui viennent nager près des côtes, et parfois même les dauphins durant la traversée."
+      ],
+      "illustration": "jour4.jpg",
+      "encarts": [
+        {
+          "symbole": "🌊",
+          "titre": "Important",
+          "texte": "Vérifiez les horaires des marées avant de partir pour profiter pleinement du banc de sable. Le trajet en bateau dure environ 1h30."
+        },
+        {
+          "symbole": "☀️",
+          "titre": "Protection",
+          "texte": "Le soleil tape très fort sur le banc de sable. Chapeau, lunettes et crème solaire sont indispensables."
+        }
+      ]
+    },
+    {
+      "jour": 5,
+      "symbole": "🌶️",
+      "titre": "Cœur Battant de Hell-Ville",
+      "legende": "Plongez au cœur de la vie locale en explorant Hell-Ville, la capitale de Nosy Be. Loin des plages, découvrez une ville animée avec ses bâtiments coloniaux, son marché couvert bouillonnant de vie, de couleurs et d'odeurs. C'est l'occasion parfaite pour sentir le pouls de l'île, goûter aux produits locaux et faire quelques emplettes artisanales.",
+      "lieu": "Hell-Ville",
+      "activites": [
+        "🛍️ <strong>Exploration du marché couvert</strong>: Imprégnez-vous de l'ambiance locale en déambulant entre les étals d'épices, de fruits exotiques, de poissons et d'artisanat.",
+        "🏛️ <strong>Balade dans le centre historique</strong>: Admirez les vestiges de l'architecture coloniale et découvrez l'histoire de la ville en flânant dans ses rues principales."
+      ],
+      "illustration": "jour5.jpg",
+      "encarts": [
+        {
+          "symbole": "🤝",
+          "titre": "Culture locale",
+          "texte": "N'hésitez pas à négocier les prix avec le sourire au marché, cela fait partie de la culture locale."
+        }
+      ]
+    },
+    {
+      "jour": 6,
+      "symbole": "🌳",
+      "titre": "Aventure dans la Forêt de Lokobe",
+      "legende": "Partez pour une immersion totale dans la nature en visitant la Réserve Naturelle Intégrale de Lokobe. Accessible uniquement en pirogue traditionnelle, cette forêt primaire est le dernier refuge de la faune et la flore originelles de Nosy Be. Accompagné d'un guide local, vous partirez sur les traces des lémuriens nocturnes, des caméléons et des serpents endémiques.",
+      "lieu": "Réserve de Lokobe",
+      "activites": [
+        "🛶 <strong>Approche en pirogue traditionnelle</strong>: Glissez silencieusement sur l'eau à travers la mangrove pour atteindre l'entrée de la réserve, une expérience authentique.",
+        "🐒 <strong>Randonnée guidée dans la jungle</strong>: Suivez votre guide sur les sentiers pour débusquer le lémurien macaco, le caméléon panthère et d'autres espèces fascinantes."
+      ],
+      "illustration": "jour6.jpg",
+      "encarts": [
+        {
+          "symbole": "👟",
+          "titre": "Équipement",
+          "texte": "Prévoyez de bonnes chaussures de marche, de l'anti-moustique et de l'eau. Un guide est obligatoire et essentiel pour repérer les animaux."
+        }
+      ]
+    },
+    {
+      "jour": 7,
+      "symbole": "🌇",
+      "titre": "Panorama à 360° au Mont Passot",
+      "legende": "Après plusieurs jours d'excursions, accordez-vous une journée plus calme. Profitez de la matinée pour vous détendre sur une plage paisible ou explorer les environs à votre rythme. En fin de journée, rejoignez le Mont Passot, le point culminant de Nosy Be. Le spectacle du soleil se couchant sur les lacs sacrés et l'ensemble de l'île est tout simplement magique.",
+      "lieu": "Ouest de Nosy Be",
+      "activites": [
+        "🧘 <strong>Matinée libre et détente</strong>: Choisissez une plage comme Madirokely ou Amporaha pour vous relaxer, lire un livre ou simplement profiter du cadre.",
+        "🌇 <strong>Coucher de soleil au Mont Passot</strong>: Admirez une vue panoramique époustouflante sur l'île et le canal du Mozambique alors que le ciel s'embrase."
+      ],
+      "illustration": "jour7.jpg",
+      "encarts": [
+        {
+          "symbole": "⏰",
+          "titre": "Timing parfait",
+          "texte": "Arrivez au Mont Passot au moins une heure avant le coucher du soleil pour choisir le meilleur point de vue et profiter des changements de lumière."
+        }
+      ]
+    },
+    {
+      "jour": 8,
+      "symbole": "🌿",
+      "titre": "Nosy Sakatia, le Jardin d'Éden",
+      "legende": "À quelques minutes de bateau de Nosy Be se cache Nosy Sakatia, l'île aux orchidées. Plus sauvage et préservée, elle offre un cadre idyllique pour une journée entre terre et mer. Randonnez à travers ses sentiers pour découvrir une végétation luxuriante avant de vivre un moment magique : nager avec les tortues vertes géantes qui viennent brouter les herbiers marins à quelques mètres du rivage.",
+      "lieu": "Nosy Sakatia",
+      "activites": [
+        "🌿 <strong>Randonnée sur l'île aux orchidées</strong>: Parcourez les sentiers de l'île pour découvrir sa flore exceptionnelle, des plantations de café aux orchidées sauvages.",
+        "🐢 <strong>Nage avec les tortues vertes</strong>: Vivez une expérience inoubliable en nageant aux côtés d'impressionnantes tortues marines dans leur milieu naturel."
+      ],
+      "illustration": "jour8.jpg",
+      "encarts": [
+        {
+          "symbole": "ℹ️",
+          "titre": "À savoir",
+          "texte": "Les tortues sont présentes toute la journée sur un site précis. Respectez une distance de sécurité et ne les touchez pas pour préserver leur quiétude."
+        }
+      ]
+    },
+    {
+      "jour": 9,
+      "symbole": "🎁",
+      "titre": "Derniers Instants Malgaches",
+      "legende": "Profitez de cette dernière journée complète pour vous imprégner une dernière fois de l'atmosphère de Nosy Be. C'est le moment idéal pour acheter vos souvenirs, comme de la vanille, des épices ou de l'artisanat local. Offrez-vous un dernier festin de saveurs malgaches dans un bon restaurant pour clôturer ce voyage en beauté.",
+      "lieu": "Ambatoloaka / Hell-Ville",
+      "activites": [
+        "🎁 <strong>Shopping de souvenirs</strong>: Dénichez des trésors d'artisanat local, de la vanille ou des nappes brodées dans les boutiques.",
+        "🍽️ <strong>Dîner d'adieu gastronomique</strong>: Savourez un dernier repas malgache, comme un romazava ou des brochettes de zébu, dans un cadre agréable."
+      ],
+      "illustration": "jour9.jpg",
+      "encarts": [
+        {
+          "symbole": "🌿",
+          "titre": "Souvenir",
+          "texte": "La vanille de Madagascar est l'une des meilleures au monde. Achetez-la de préférence sous vide pour une meilleure conservation."
+        }
+      ]
+    },
+    {
+      "jour": 10,
+      "symbole": "✈️",
+      "titre": "Veloma, Nosy Be !",
+      "legende": "Toutes les bonnes choses ont une fin. Selon l'horaire de votre vol, profitez d'un dernier petit-déjeuner face à l'océan. Il est temps de faire vos bagages, la tête remplie d'images et de souvenirs inoubliables de l'île aux parfums. Transfert vers l'aéroport de Fascene pour votre vol retour vers Paris.",
+      "lieu": "Nosy Be",
+      "activites": [
+        "✈️ <strong>Transfert vers l'aéroport</strong>: Route vers l'aéroport de Fascene pour l'enregistrement de votre vol retour."
+      ],
+      "illustration": "jour10.jpg",
+      "encarts": [
+        {
+          "symbole": "👋",
+          "titre": "Au revoir",
+          "texte": "L'expression malgache pour dire au revoir est 'Veloma'. N'hésitez pas à l'utiliser, cela sera très apprécié."
+        }
+      ]
+    }
+  ],
+  "periodes_ideales": [
+    {
+      "titre": "Les périodes idéales pour ce séjour sont les mois de mai à octobre, durant la saison sèche.",
+      "symbole": "☀️"
+    }
+  ],
+  "infos_pratiques": [
+    {
+      "titre": "Climat tropical avec des températures moyennes de 25-30°C. Prévoir des vêtements légers et un imperméable pour les averses passagères.",
+      "symbole": "🌡️"
+    },
+    {
+      "titre": "La monnaie est l'Ariary (MGA). Changez des euros à l'arrivée et prévoyez du liquide, les cartes de crédit sont peu acceptées hors des grands hôtels.",
+      "symbole": "💳"
+    },
+    {
+      "titre": "Les tuk-tuks et les taxis sont les moyens de transport principaux. Négociez toujours le prix de la course avant de monter.",
+      "symbole": "🛺"
+    },
+    {
+      "titre": "Le Wi-Fi est souvent lent. Acheter une carte SIM locale (Telma, Orange) est une bonne option pour rester connecté.",
+      "symbole": "📶"
+    }
+  ],
+  "liens_utiles": [
+    {
+      "legende": "Informations touristiques officielles",
+      "titre": "Office National du Tourisme de Madagascar",
+      "url": "https://madagascar-tourisme.com/fr/",
+      "symbole": "📘"
+    },
+    {
+      "legende": "Conseils aux voyageurs du gouvernement",
+      "titre": "France Diplomatie - Madagascar",
+      "url": "https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/madagascar/",
+      "symbole": "🛂"
+    },
+    {
+      "legende": "Prévisions météo locales",
+      "titre": "Météo Nosy Be",
+      "url": "https://www.accuweather.com/fr/mg/nosy-be/232390/weather-forecast/232390",
+      "symbole": "🌤️"
+    }
+  ]
+}
